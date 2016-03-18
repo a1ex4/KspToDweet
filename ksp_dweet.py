@@ -10,20 +10,27 @@ vessel.subscribe("vessel_periapsis")
 vessel.subscribe("vessel_apoapsis")
 vessel.subscribe("resource_ec_current")
 vessel.subscribe("resource_ec_max")
+vessel.subscribe("resource_ox_current")
+vessel.subscribe("resource_ox_max")
+vessel.subscribe("resource_mp_current")
+vessel.subscribe("resource_mp_max")
+vessel.subscribe("resource_lf_current")
+vessel.subscribe("resource_lf_max")
+vessel.subscribe("resource_sf_current")
+vessel.subscribe("resource_sf_max")
 vessel.subscribe("vessel_body")
 
 def truncate(n):
-    try :
+    if n is not None:
         n = round(n,1)
-    except:
-        n = n
+
     return n
 
 def timec(n):
-    try:
+    if n is not None:
         m, s = divmod(n, 60)
         h, m = divmod(m, 60)
-    except:
+    else:
         h,m,s = 0,0,0
     return "%d:%02d:%02d" % (h, m, s)
     
@@ -50,6 +57,14 @@ while 1:
                'Time To Apoapsis' : vessel_time_to_apoapsis,
                'EletricCharge Current' : truncate(vessel.resource_ec_current),
                'EletricCharge Max' : truncate(vessel.resource_ec_max),
+               'Oxidizer Current' : truncate(vessel.resource_ox_current),
+               'Oxidizer Max' : truncate(vessel.resource_ox_max),
+               'MonoPropellant Current' : truncate(vessel.resource_mp_current),
+               'MonoPropellant Max' : truncate(vessel.resource_mp_max),
+               'LiquidFuel Current' : truncate(vessel.resource_lf_current),
+               'LiquidFuel Max' : truncate(vessel.resource_lf_max),
+               'SolidFuel Current' : truncate(vessel.resource_sf_current),
+               'SolidFuel Max' : truncate(vessel.resource_sf_max),
                }
     
     
