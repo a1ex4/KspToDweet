@@ -1,0 +1,13 @@
+build/ksp_to_dweet/_ssl.pyd
+build/ksp_to_dweet/unicodedata.pyd
+build/ksp_to_dweet/bz2.pyd
+build - Raccourci.lnk
+build/ksp_to_dweet/cacert.pem
+build/ksp_to_dweet/_ctypes.pyd
+build/ksp_to_dweet/pyexpat.pyd
+build/ksp_to_dweet/_socket.pyd
+build/ksp_to_dweet/_hashlib.pyd
+build/ksp_to_dweet/select.pyd
+*.dll
+build/ksp_to_dweet/library.zip
+build/ksp_to_dweet/ksp_dweet.exe
